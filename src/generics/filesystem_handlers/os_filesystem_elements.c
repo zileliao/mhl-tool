@@ -128,9 +128,9 @@ int get_wfile_stat_data(
   }
 
 #ifdef MAC_OS_X
-  res = lstat(locencfn, &stat_data->st_data);
+  res = stat(locencfn, &stat_data->st_data);
 #else
-  res = lstat64(locencfn, &stat_data->st_data);
+  res = stat64(locencfn, &stat_data->st_data);
 #endif
   free(locencfn);
 #endif
